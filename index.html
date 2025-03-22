@@ -1032,12 +1032,19 @@
         'Prime Numbers': `const isPrime = number => {
   if (number < 2) return false;
 
-  for (let i = 2; i < number; i++) {
+  for (let i = 3; i < Math.sqrt(number); i=i+2) {
     if (number % i == 0) return false;
   }
 
   return true;
 }
+
+let counter = 0;
+while (counter <= 100000) {
+  if (isPrime(counter)) Porffor.numberLog(counter);
+  counter++;
+}
+
 
 let counter = 0;
 while (counter <= 10000) {
